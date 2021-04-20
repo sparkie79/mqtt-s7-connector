@@ -63,15 +63,17 @@ function init() {
 
 		// start loop
 		setInterval(() => {
+			sf.debug("Sending discovery");
 			plc_update_loop();
 		}, config.update_time);
 
 		// discovery broadcast loop
 		setInterval(() => {
+			sf.debug("Sending discovery");
 			devices.forEach((dev) => {
 				dev.send_discover_msg();
 			});
-		}, 300000); // 5 min
+		}, 10000); // 5 min
 
 	} else {
 		setTimeout(() => {
