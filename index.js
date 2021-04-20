@@ -2,6 +2,7 @@
 'use strict';
 
 let config = require('./config');
+let devices = [];
 
 let mqtt_handler = require('./mqtt_handler.js');
 let plc_handler = require('./plc.js');
@@ -11,8 +12,6 @@ let deviceFactory = require('./deviceFactory.js');
 
 let mqtt = mqtt_handler.setup(config.mqtt, mqttMsgParser, init);
 let plc = plc_handler.setup(config.plc, init);
-
-let devices = [];
 
 function init() {
 	if (mqtt_handler.isConnected() && plc_handler.isConnected()) {
