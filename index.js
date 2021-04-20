@@ -43,7 +43,7 @@ function init() {
 			// create for each config entry an object
 			// and save it to the array
 			for(let dev of config.devices) {
-				let new_device = deviceFactory(devices, plc, mqtt, dev, config.mqtt_base);
+				let new_device = deviceFactory([], plc, mqtt, dev, config.mqtt_base);
 
 				// perform discovery message
 				new_device.discovery_topic = config.discovery_prefix;
