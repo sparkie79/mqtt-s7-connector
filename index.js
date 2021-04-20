@@ -52,10 +52,10 @@ function init() {
 				// save the new device in the array
 				// with the mqtt base as the index
 				devices[new_device.mqtt_name] = new_device;
-
+				sf.debug("Devices: " + devices);
 				sf.debug("New device added: " + config.mqtt_base + "/" + new_device.mqtt_name);
 			};
-			sf.debug("Devices: " + devices);
+			
 		} else {
 			sf.error("No devices in config found !");
 		}
