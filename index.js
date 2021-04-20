@@ -42,7 +42,7 @@ function init() {
 
 			// create for each config entry an object
 			// and save it to the array
-			config.devices.forEach((dev) => {
+			for (var dev in config.devices) {
 				let new_device = deviceFactory(devices, plc, mqtt, dev, config.mqtt_base);
 
 				// perform discovery message
@@ -54,7 +54,7 @@ function init() {
 				devices[new_device.mqtt_name] = new_device;
 
 				sf.debug("New device added: " + config.mqtt_base + "/" + new_device.mqtt_name);
-			});
+			};
 			sf.debug("Devices: " + devices);
 		} else {
 			sf.error("No devices in config found !");
