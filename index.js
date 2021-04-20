@@ -55,6 +55,7 @@ function init() {
 
 				sf.debug("New device added: " + config.mqtt_base + "/" + new_device.mqtt_name);
 			});
+			sf.debug("Devices: " + devices);
 		} else {
 			sf.error("No devices in config found !");
 		}
@@ -65,8 +66,7 @@ function init() {
 			sf.debug("Polling");
 			plc_update_loop();
 		}, config.update_time);
-
-		sf.debug("Sending discovery for:" + devices);
+		
 		// discovery broadcast loop
 		setInterval(() => {
 			sf.debug("Sending discovery for:" + devices.length);
