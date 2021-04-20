@@ -69,7 +69,7 @@ function init() {
 		sf.debug("Sending discovery for:" + devices);
 		// discovery broadcast loop
 		setInterval(() => {
-			sf.debug("Sending discovery for:" + devices);
+			sf.debug("Sending discovery for:" + devices.length);
 			devices.forEach((dev) => {
 				sf.debug("Sending discovery for:" + dev.mqtt_name);
 				dev.send_discover_msg();
