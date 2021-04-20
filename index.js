@@ -52,8 +52,6 @@ function init() {
 				// save the new device in the array
 				// with the mqtt base as the index
 				devices[new_device.mqtt_name] = new_device;
-				sf.debug("Devices: " + devices);
-				sf.debug("New device added: " + config.mqtt_base + "/" + new_device.mqtt_name);
 			};
 			
 		} else {
@@ -69,8 +67,8 @@ function init() {
 		
 		// discovery broadcast loop
 		setInterval(() => {
-			sf.debug("Sending discovery for:" + devices.length);
-			devices.forEach((dev) => {
+			for (var key in devices) {
+				let dev = devices[key];
 				sf.debug("Sending discovery for:" + dev.mqtt_name);
 				dev.send_discover_msg();
 			});
