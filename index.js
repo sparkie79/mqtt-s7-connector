@@ -71,7 +71,7 @@ function init() {
 				let dev = devices[key];
 				sf.debug("Sending discovery for:" + dev.mqtt_name);
 				dev.send_discover_msg();
-			});
+			};
 		}, 10000); // 5 min
 
 	} else {
