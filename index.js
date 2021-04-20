@@ -67,6 +67,7 @@ function init() {
 			plc_update_loop();
 		}, config.update_time);
 
+		sf.debug("Sending discovery for:" + devices);
 		// discovery broadcast loop
 		setInterval(() => {
 			sf.debug("Sending discovery for:" + devices);
