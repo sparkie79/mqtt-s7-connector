@@ -63,7 +63,7 @@ function init() {
 
 		// start loop
 		setInterval(() => {
-			sf.debug("Sending discovery");
+			sf.debug("Polling");
 			plc_update_loop();
 		}, config.update_time);
 
